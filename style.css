@@ -1,0 +1,152 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background-color: #0f172a; 
+    color: #f8fafc; 
+    padding: 2rem;
+  }
+  
+    /* Center the entire search section at the top of the page */
+  .search-box {
+    max-width: 600px;
+    margin: 2rem auto 3rem auto; /* Centers the box on the screen */
+    text-align: center;
+  }
+
+  .search-box h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.05em;
+    background: linear-gradient(to right, #38bdf8, #818cf8);
+    
+    /* 1. Keeps compatibility for Safari/Chrome */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    /* 2. ADD THIS: Standard version that makes the editor happy */
+    background-clip: text;
+  }
+  
+
+  /* Style the text input box */
+  #movie-search {
+    width: 70%;
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    background-color: #1e293b; /* Matches your card background */
+    border: 2px solid #334155; /* Subtle dark border outline */
+    border-radius: 8px 0 0 8px; /* Rounds only the LEFT corners */
+    color: #f8fafc;
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+
+  /* Make the input border glow bright blue when you click inside it */
+  #movie-search:focus {
+    border-color: #38bdf8;
+  }
+
+  /* Style the Search Button */
+  #search-btn {
+    width: 25%;
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: #38bdf8; /* Vibrant neon blue */
+    border: 2px solid #38bdf8;
+    border-radius: 0 8px 8px 0; /* Rounds only the RIGHT corners */
+    color: #0f172a;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+
+  /* Change button color smoothly when you hover over it */
+  #search-btn:hover {
+    background-color: #0ea5e9;
+    border-color: #0ea5e9;
+  }
+
+
+  /* 2. Target the Movie Container and activate CSS GRID */
+  #movie-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+  }
+  
+  /* 3. Style each individual generated Movie Card */
+  .movie-card {
+    background-color: #1e293b; /* Slightly lighter slate for card depth */
+    border-radius: 12px;
+    overflow: hidden; /* Clips image corners to match card border-radius */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  /* 4. Cool hover effect to make it feel responsive and premium */
+  .movie-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* 5. Ensure poster images fill their cards cleanly */
+  .movie-card img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover; /* Prevents image from stretching out of proportion */
+  }
+  
+  /* 6. Spacing for card text descriptions */
+  .movie-card h3 {
+    font-size: 1.1rem;
+    padding: 1rem 1rem 0.25rem 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adds "..." if a title is way too long */
+  }
+  
+  .movie-card p {
+    color: #94a3b8; /* Muted gray text for the year */
+    font-size: 0.9rem;
+    padding: 0 1rem 1rem 1rem;
+  }
+  
+
+  /* Center the loading elements horizontally and vertically */
+.loading-box {
+  grid-column: 1 / -1; /* Tells the loader to span across the entire grid row */
+  text-align: center;
+  padding: 3rem;
+  color: #94a3b8;
+}
+
+/* Create a circular spinner ring using borders */
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-top-color: #38bdf8; /* The bright blue moving part */
+  border-radius: 50%; /* Makes the box a perfect circle */
+  margin: 0 auto 1rem auto; /* Centers it */
+  animation: spin 1s linear infinite; /* Tells it to spin forever */
+}
+
+/* The instruction telling the browser how to rotate the spinner loop */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Style the button automatically whenever JavaScript sets it to disabled */
+button:disabled {
+  background-color: #64748b !important; /* Changes color to a muted gray */
+  cursor: not-allowed; /* Changes the mouse pointer to a "no entry" circle */
+  opacity: 0.6;
+}
+

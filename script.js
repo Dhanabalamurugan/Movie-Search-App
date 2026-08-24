@@ -13,7 +13,7 @@ function fetchMovies(){
         return;
     }
 
-    searchButton.disabled;                          // Prevents double clicks spamming the API
+    searchButton.disabled = true;                          // Prevents double clicks spamming the API
     searchButton.textContent = "Searching...";
 
     movieContainer.innerHTML = `

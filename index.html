@@ -4,20 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Movie App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> <!-- Font Awesome CDN Link for Icons -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header class="search-box">
-        <h1>Welcome</h1>
-        <input type="text" id="movie-search" placeholder="Type here to search">
-        <button type="button" id="search-btn">Search</button>
+    <header class="main-header">
+        <div class="nav-bar">
+            <div class="nav-left">
+                <a href="#" class="nav-link active"><i class="fas fa-house"></i> Home</a>
+                <a href="#" class="nav-link"><i class="fas fa-fire"></i> Trending</a>
+            </div>
+            <h1 class="brand-title">Movie Search Portal</h1>
+            <div class="nav-right">
+                <a href="#" class="nav-link"><i class="fas fa-bookmark"></i> Watchlist</a>
+                <button type="button" class="login-btn"><i class="fas fa-circle-user"></i> Login</button>
+            </div>
+        </div>
+
+        <div class="search-box">
+            <input type="text" id="movie-search" placeholder="Type here to search">
+            <button type="button" id="search-btn">Search</button>
+        </div>
     </header>
 
     <main id="movie-container">
         <!--placeholder for movie layout cards-->
     </main>
-    
+
     <script src="script.js"></script>
 </body>
 </html>
